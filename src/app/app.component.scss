@@ -1,0 +1,135 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-family: Arial, Geneva, Helvetica, sans-serif;
+}
+
+.screen-container{
+
+    height: 60%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 10px;
+    background-color: black;
+
+    .wing-contanier{
+        display: flex;
+        flex-direction: column;
+        border: 3px solid white;
+        width: 150px;
+        border-radius: 10px;  
+        align-items: center;
+        justify-content: center;
+
+        .wings{
+
+            background-color: #fff;
+            margin: 10px;
+            height: 100px;
+            width: 120px;
+            justify-content: center;
+            display: flex;
+            
+            img{
+                width: 100px;
+            }
+
+            .hello-world{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+ 
+    }
+    
+    .screen{
+        height: 380 px;
+        width: 576px;
+        padding: 24px;
+        display: flex;
+        border: 3px solid white;
+        margin: 0px 24px;
+
+    }
+
+    .info-show{
+        display: block;
+        color: aliceblue;
+    }
+
+    .info-hide{
+        display: none;
+    }
+}
+
+.box-container{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    background-color: black;
+    
+    .inner-div{
+        display: flex;
+        flex:1;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        justify-content: flex-start
+    }
+}
+
+.svg-container{
+    border: 3px solid black;
+
+}
+
+.div-container{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    .hello-world{
+        font-family: Arial, Geneva, Helvetica, sans-serif;
+        font-weight:900;
+        font-size:60pt;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        span:first-child{
+            position: relative;
+            right: 50px;
+        }
+    }
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border: 2px solid white;
+    padding: 3px;
+
+    .upper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75px;
+        
+    }
+
+    .lower{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75px;
+    }
+}
+
