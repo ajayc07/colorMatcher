@@ -54,7 +54,7 @@
         display: flex;
         border: 3px solid white;
         margin: 0px 24px;
-
+        border-radius: 5px;
     }
 
     .info-show{
@@ -79,7 +79,7 @@
         flex:1;
         overflow-y: auto;
         flex-wrap: wrap;
-        justify-content: flex-start
+        justify-content: center;
     }
 }
 
@@ -101,6 +101,7 @@
         font-size:60pt;
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
 
         span:first-child{
@@ -116,6 +117,7 @@
     margin: 10px;
     border: 2px solid white;
     padding: 3px;
+    border-radius: 3px;
 
     .upper{
         display: flex;
@@ -131,5 +133,26 @@
         justify-content: center;
         height: 75px;
     }
+
+    .custom{
+        height : 65px;
+    }
+
+    input[type="color"]{
+        
+        display:flex;
+        flex: 1;
+        height:100%;
+    } 
+
+    .custom-button  {
+        
+        button {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            justify-content: center;
+        }
+    } 
 }
 

@@ -27,9 +27,9 @@ export class AppComponent {
     { upper : '#EB2188' ,lower : '#080A52' },
   ]
 
-  public upperColor : string = "#F96167";
+  public upperColor : string = "";
   
-  public lowerColor : string = "#F96167";
+  public lowerColor : string = "";
 
   public toggleFlag : boolean = false;
   
@@ -86,9 +86,23 @@ export class AppComponent {
     this.showItem = inScreen;
   }
 
-  public prev() : void {
+  public customColorChange(customColor: any) : void {
 
-    this.showItem -=1;
+    console.log(customColor);
+
+    this.showInfo = false;
+
+    if (customColor['target']['id'] == 'custom-upper') {
+      
+      this.upperColor = customColor['target']['value'];
+
+    } else if (customColor['target']['id'] == 'custom-lower') {
+      
+      this.lowerColor = customColor['target']['value'];
+    }
+    
+    this.setColors();
   }
+
 
 }
