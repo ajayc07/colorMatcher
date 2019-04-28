@@ -1,29 +1,14 @@
 <div class="screen-container">
-  <div class="wing-contanier">
 
-    <div class="wings" (click)="next(1)">
-      <img  src="./../assets/owl.svg" alt="background with image">
-    </div>
-
-    <div class="wings" (click)="next(2)">
-        <svg width="100%" height="100%">
-        <rect fill="black" width="60" height="50" transform="translate(30,20)" />
-      </svg>
-    </div>
-    <div class="wings" (click)="next(3)">
-        <div class="hello-world">
-            <span>HELLO </span>
-            <span> WORLD</span>
-          </div>
-    </div>
-  </div>
   <div class="screen">
 
     <div [ngClass]="(showInfo === true) ? 'info-show' : 'info-hide'">
-      <h1>Please choose color box below</h1>
-      <h2>Click again the same box to toggle the color</h2>
-      <h2>Click the tumbnail on the left to change the object</h2>
-      <h2>You can choose custom combination in the last box</h2>
+      <ul>
+        <li>Please choose color box below</li>
+        <li>Click again the same box to toggle the color</li>
+        <li>Click the tumbnail on the left to change the object</li>
+        <li>You can choose custom combination in the last box</li>
+      </ul>
     </div>
 
     <svg class="svg-container" width="100%" height="100%" *ngIf="showItem == 1"
@@ -82,6 +67,25 @@
 
 
   </div>
+
+  <div class="wing-contanier">
+
+      <div class="wings" (click)="next(1)">
+        <img  src="./../assets/owl.svg" alt="background with image">
+      </div>
+  
+      <div class="wings" (click)="next(2)">
+          <svg width="100%" height="100%">
+          <rect fill="black" width="60" height="50" transform="translate(30,20)" />
+        </svg>
+      </div>
+      <div class="wings" (click)="next(3)">
+          <div class="hello-world">
+              <span>HELLO </span>
+              <span> WORLD</span>
+            </div>
+      </div>
+    </div>
 
   <!-- <div class="wing-contanier">
     <div></div>

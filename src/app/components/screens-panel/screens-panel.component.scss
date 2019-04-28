@@ -6,6 +6,13 @@
     flex: 1;
     justify-content: center;    
 
+    @media screen and (max-width:600px) {
+        
+        height: 75%;
+        padding: 0px 10px;
+        flex-direction: column;
+     }
+
     .wing-contanier{
         display: flex;
         flex-direction: column;
@@ -15,6 +22,12 @@
         align-items: center;
         justify-content: center;
         margin: 20px 0px;
+
+        @media screen and (max-width:600px) {
+           flex-direction: row;
+           width: 100% ;
+           padding: 10px 0px;
+        }
 
         .wings{
 
@@ -40,17 +53,27 @@
     }
     
     .screen{
-        height: 380 px;
+        height: 360px;
         width: 576px;
         padding: 24px;
         display: flex;
         border: 3px solid white;
         margin: 20px 24px;
         border-radius: 5px;
+
+        
+        @media screen and (max-width:600px) {
+            height: 360px;
+            width: 100%;
+            margin: 12px 20px 0 0px;
+            padding: 24px 0px;
+            
+         }
     }
 
     .info-show{
-        display: block;
+        display: flex;
+        flex: 1;
         color: aliceblue;
     }
 
@@ -79,5 +102,21 @@
             position: relative;
             right: 50px;
         }
+
+        @media screen and (max-width:600px) {
+            span:first-child{
+                position: relative;
+                right: 0px;
+            }
+        }
+    }
+}
+
+li {
+    font-size: 2em; 
+    margin-bottom: 12px; 
+
+    @media screen and (max-width:600px) {
+        font-size: 1em;
     }
 }

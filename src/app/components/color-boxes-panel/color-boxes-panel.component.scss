@@ -4,6 +4,10 @@
     width: 100%;
     display: flex;
     flex: 1;
+
+    @media screen and (max-width:600px) {
+        height: 25%;
+     }
     
     .inner-div{
         display: flex;
@@ -21,6 +25,11 @@
     border: 2px solid white;
     padding: 3px;
     border-radius: 3px;
+
+    @media screen and (max-width:600px) {
+        width: 100px;
+        height: 100px;
+     }
 
     .upper{
         display: flex;
