@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ColorBoxesPanelComponent } from './components/color-boxes-panel/color-boxes-panel.component';
+import { ScreensPanelComponent } from './components/screens-panel/screens-panel.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ColorBoxesPanelComponent,
+    ScreensPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,60 @@
+
+.box-container{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    
+    .inner-div{
+        display: flex;
+        flex:1;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    margin: 5px 8px;
+    border: 2px solid white;
+    padding: 3px;
+    border-radius: 3px;
+
+    .upper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:50%;
+        
+    }
+
+    .lower{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+    }
+
+    .custom{
+        height : 65px;
+    }
+
+    input[type="color"]{
+        
+        display:flex;
+        flex: 1;
+        height:100%;
+    } 
+
+    .custom-button  {
+        
+        button {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            justify-content: center;
+        }
+    } 
+}

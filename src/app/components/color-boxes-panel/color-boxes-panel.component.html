@@ -1,0 +1,20 @@
+<div class="box-container">
+  <div class="inner-div">
+    <div class="box" *ngFor="let color of colors" (click)="getColors(color)">
+      <div class="upper" [style.background]="color.upper" [style.color]="color.lower">{{color.upper}}</div>
+      <div class="lower" [style.background]="color.lower" [style.color]="color.upper">{{color.lower}}</div>
+    </div>
+
+    <div class="box">
+      <div class="upper custom">
+          <input type="color" id="custom-upper" (change)="customColorChange($event)">
+      </div>
+      <div class="custom-button">
+          <button (click)="toggleColor()">Toggle</button>
+      </div>
+      <div class="lower custom">
+          <input type="color" id="custom-lower" (change)="customColorChange($event)">
+      </div>
+    </div>
+  </div>
+</div>
