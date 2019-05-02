@@ -1,8 +1,8 @@
 <div class="screen-container">
 
-  <div class="screen" id="screen">
+  <div class="screen" id="screen" (click)="showBottomBar()">
 
-    <div [ngClass]="(showInfo === true) ? 'info-show' : 'info-hide'">
+    <div [ngClass]="(showInfo === true) ? 'info-show screen-border' : 'info-hide'">
       <ul>
         <li>Please choose color box below</li>
         <li>Click again the same box to toggle the color</li>
@@ -30,13 +30,15 @@
     </div>
 
 
-    <div class="toolbar" >
-      <button (click)="openFullscreen()">Full Screen</button>
-      <button (click)="getInfo()">Info</button>
+    <div *ngIf="!showInfo" [ngClass]="(showToolBar === true) ? 'toolbar-active' : 'toolbar'">
+      <div class="button-container">
+        <button (click)="toogleFullScreen()">{{this.isFullScreen ? 'Exit Full Screen' : 'Full Screen'}}</button>
+        <button (click)="getInfo()">Info</button>
+      </div>
     </div>
   </div>
 
-  <div class="wing-contanier">
+  <div class="wing-contanier" *ngIf="!showInfo">
 
     <div class="wings" (click)="next(1)">
         <ng-container  *ngTemplateOutlet="FirstBox"> </ng-container>

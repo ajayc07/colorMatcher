@@ -56,6 +56,20 @@ export class ScreensPanelComponent implements OnInit {
    */
   public element : any;
 
+  /**
+   * to toggle tool bar
+   * @type {boolean}
+   * @memberof ScreensPanelComponent
+   */
+  public showToolBar : boolean;
+
+  /**
+   * To toggle  full screen
+   * @type {boolean}
+   * @memberof ScreensPanelComponent
+   */
+  public isFullScreen : boolean;
+
 
 
   /**
@@ -142,13 +156,28 @@ export class ScreensPanelComponent implements OnInit {
 
     this.setColors();
   }
+
+
+  /**
+   * Toggling screen
+   * @memberof ScreensPanelComponent
+   */
+  public toogleFullScreen() : void {
+
+    this.isFullScreen = !this.isFullScreen;
+
+    this.isFullScreen ? this.openFullscreen() : this.closeFullscreen(); 
+  }
   
   
   /**
    * Opening full screen
    * @memberof ScreensPanelComponent
    */
-    public openFullscreen() {
+  public openFullscreen() : void{
+
+    console.log('Full Screen');
+    
 
       if (this.element.requestFullscreen) {
         this.element.requestFullscreen();
@@ -159,16 +188,51 @@ export class ScreensPanelComponent implements OnInit {
       } else if (this.element.msRequestFullscreen) { /* IE/Edge */
         this.element.msRequestFullscreen();
       }
+  }
+
+  /**
+   * Exit full screen
+   * @memberof ScreensPanelComponent
+   */
+  public   closeFullscreen() : void{
+
+    console.log('Exit Full screen');
+    
+
+    if (this.document.exitFullscreen) {
+      this.document.exitFullscreen();
+    } else if (this.document.mozCancelFullScreen) {  /* Firefox */
+      this.document.mozCancelFullScreen();
+    } else if (this.document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      this.document.webkitExitFullscreen();
+    } else if (this.document.msExitFullscreen) { /* IE/Edge */
+      this.document.msExitFullscreen();
     }
+  }
 
   /**
    * To get the instruction back
    * @memberof ScreensPanelComponent
    */
-    public getInfo() {
+  public getInfo() : void{
 
       this.showInfo = true;
-    }
+  }
+
+  /**
+   * To show and hide tool bar
+   * @memberof ScreensPanelComponent
+   */
+  public showBottomBar() : void{
+
+    this.showToolBar = true;
+
+    setTimeout(() => {
+      this.showToolBar = false;
+    }, 6000);
+}
+
+
 
 
 }
