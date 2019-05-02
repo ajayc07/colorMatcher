@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ApplicationServicesService } from 'src/app/services/application-services.service';
 import { ColorState } from 'src/app/models/color.models';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'screens-panel',
@@ -47,6 +48,15 @@ export class ScreensPanelComponent implements OnInit {
    */
   public toggleFlag : boolean;
 
+  
+  /**
+   * Document.Element
+   * @type {boolean}
+   * @memberof ScreensPanelComponent
+   */
+  public element : any;
+
+
 
   /**
    * Creates an instance of ScreensPanelComponent.
@@ -54,6 +64,7 @@ export class ScreensPanelComponent implements OnInit {
    * @memberof ScreensPanelComponent
    */
   constructor(
+    @Inject(DOCUMENT) private document: any,   //to get the document
     private _colorStateService : ApplicationServicesService
   ) { }
 
@@ -61,6 +72,7 @@ export class ScreensPanelComponent implements OnInit {
   
     this._colorStateListner();
     this.setColors();
+    this.element = document.getElementById('screen');
   }
 
 
@@ -130,4 +142,33 @@ export class ScreensPanelComponent implements OnInit {
 
     this.setColors();
   }
+  
+  
+  /**
+   * Opening full screen
+   * @memberof ScreensPanelComponent
+   */
+    public openFullscreen() {
+
+      if (this.element.requestFullscreen) {
+        this.element.requestFullscreen();
+      } else if (this.element.mozRequestFullScreen) { /* Firefox */
+        this.element.mozRequestFullScreen();
+      } else if (this.element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        this.element.webkitRequestFullscreen();
+      } else if (this.element.msRequestFullscreen) { /* IE/Edge */
+        this.element.msRequestFullscreen();
+      }
+    }
+
+  /**
+   * To get the instruction back
+   * @memberof ScreensPanelComponent
+   */
+    public getInfo() {
+
+      this.showInfo = true;
+    }
+
+
 }
