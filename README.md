@@ -5,7 +5,10 @@ Color Companion
 
 ### Implementaion
 
-- Color companion is implemented with two components and data passing is handled uing service with **behavior subject
+- Color companion has two main components 
+  - color-boxes-panel -> Provides the choices to choose color combination from various color combination boxes
+  - screens-panel     -> Displays the object with color combo from the choice. 
+- Data passing is done using service with **behavior subject**
 
 ### Requirements
 
