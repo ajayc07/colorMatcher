@@ -7,13 +7,11 @@ Color Companion
 
 - Color companion is implemented with two components and data passing is handled uing service with **behavior subject
 
-    .
-    ├── ...                                                                                                                                 ├── components                     
-    │   ├── color-boxes-panel         # Provides various color combo boxes
-    │   └── screens-panel             # Displays the object with applied color combo
-    ├── services                      # Service file to handle data passing with help of behavior subject
-    │   └── application-services  
-    └── ...
+├───components
+│   ├───color-boxes-panel
+│   └───screens-panel
+├───models
+└───services
 
 ### Requirements
 
