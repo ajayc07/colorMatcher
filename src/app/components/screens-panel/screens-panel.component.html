@@ -4,10 +4,11 @@
 
     <div [ngClass]="(showInfo === true) ? 'info-show screen-border' : 'info-hide'">
       <ul>
-        <li>Please choose color box below</li>
+        <li>Please choose the desired color combo from the color boxes</li>
         <li>Click again the same box to toggle the color</li>
-        <li>Click the tumbnail on the left to change the object</li>
-        <li>You can choose custom combination in the last box</li>
+        <li>Click the tumbnail on the object box to change the object</li>
+        <li>For custom combination choose colors in last box</li>
+        <li>Click on the main panel to get options</li>
       </ul>
     </div>
 
@@ -33,7 +34,7 @@
     <div *ngIf="!showInfo" [ngClass]="(showToolBar === true) ? 'toolbar-active' : 'toolbar'">
       <div class="button-container">
         <button (click)="toogleFullScreen()">{{this.isFullScreen ? 'Exit Full Screen' : 'Full Screen'}}</button>
-        <button (click)="getInfo()">Info</button>
+        <button *ngIf="!isFullScreen" (click)="getInfo()">Info</button>
       </div>
     </div>
   </div>

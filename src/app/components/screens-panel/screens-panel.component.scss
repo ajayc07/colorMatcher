@@ -115,11 +115,13 @@
         display: flex;
         flex: 1;
         color: aliceblue;
+        align-items: center;    
     }
-
+    
     .info-hide{
         display: none;
     }
+
 }
 
 .div-container{
@@ -144,6 +146,8 @@
         }
 
         @media screen and (max-width:600px) {
+            font-size:54pt;
+
             span:first-child{
                 position: relative;
                 right: 0px;
@@ -152,8 +156,14 @@
     }
 }
 
+ul {
+
+    list-style : square;
+    padding-inline-end: 40px;
+}
+
 li {
-    font-size: 2em; 
+    font-size: 1.5em; 
     margin-bottom: 12px; 
 
     @media screen and (max-width:600px) {

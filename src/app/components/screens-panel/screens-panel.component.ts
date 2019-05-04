@@ -87,6 +87,7 @@ export class ScreensPanelComponent implements OnInit {
     this._colorStateListner();
     this.setColors();
     this.element = document.getElementById('screen');
+    this. detectScreenChange();
   }
 
 
@@ -177,17 +178,15 @@ export class ScreensPanelComponent implements OnInit {
   public openFullscreen() : void{
 
     console.log('Full Screen');
-    
-
-      if (this.element.requestFullscreen) {
-        this.element.requestFullscreen();
-      } else if (this.element.mozRequestFullScreen) { /* Firefox */
-        this.element.mozRequestFullScreen();
-      } else if (this.element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-        this.element.webkitRequestFullscreen();
-      } else if (this.element.msRequestFullscreen) { /* IE/Edge */
-        this.element.msRequestFullscreen();
-      }
+    if (this.element.requestFullscreen) {
+      this.element.requestFullscreen();
+    } else if (this.element.mozRequestFullScreen) { /* Firefox */
+      this.element.mozRequestFullScreen();
+    } else if (this.element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      this.element.webkitRequestFullscreen();
+    } else if (this.element.msRequestFullscreen) { /* IE/Edge */
+      this.element.msRequestFullscreen();
+    }
   }
 
   /**
@@ -230,9 +229,23 @@ export class ScreensPanelComponent implements OnInit {
     setTimeout(() => {
       this.showToolBar = false;
     }, 6000);
-}
+  }
 
+  
+  /**
+   *To detect changes of full screen toggle
+   * @memberof ScreensPanelComponent
+   */
+  public detectScreenChange() : void {
+    this.document.addEventListener("fullscreenchange", (event) => {
+     
+      if(!this.document.fullscreenElement) {
+        this.isFullScreen = false;
+      }
+    });
+  }
 
+  
 
 
 }
