@@ -7,12 +7,6 @@ Color Companion
 
 - Color companion is implemented with two components and data passing is handled uing service with **behavior subject
 
-├───components
-│   ├───color-boxes-panel
-│   └───screens-panel
-├───models
-└───services
-
 ### Requirements
 
 - Node with angular cli installed
